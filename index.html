@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Minesweeper</title>
+  <link href="index.css" rel="stylesheet">
+</head>
+<body>
+  <div class="layer top"></div>
+  <div class="title"><h1>MINESWEEPER</h1><a href="https://github.com/JamesAC42/minesweeper" class="author">by james</a></div>
+  <div class="button-container">
+    <div class="button" id="start-easy"><span>easy</span></div>
+    <div class="button" id="start-medium"><span>medium</span></div>
+    <div class="button" id="start-hard"><span>hard</span></div>
+  </div>
+  <canvas id="canvas"></canvas>
+  <div id="placeholder">
+    <div class="placeholder-inner">
+      <span>Choose a mode to begin.</span>
+    </div>
+  </div>
+  <div id="face"><div class="face-inner"><img src="images/happy.png" alt="" id="face-img"></div></div>
+  <div id="bombs-remaining"><span class="unlit">0000</span><span class="lit"></span></div>
+  <div id="timer"><span class="unlit">0000</span><span class="lit"></span></div>
+  <div class="credits">All images from <a href="https://icons8.com">icons8.com</a></div>
+  <script src="index.js"></script>
+</body>
+</html>

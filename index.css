@@ -1,0 +1,227 @@
+@font-face {
+  font-family: 'ZCOOLQingKeHuangYou-Regular';
+  src: url('./ZCOOL_QingKe_HuangYou/ZCOOLQingKeHuangYou-Regular.ttf');
+}
+@font-face {
+  font-family: 'Share Tech Mono';
+  src: url('./Share_Tech_Mono/ShareTechMono-Regular.ttf');
+}
+body {
+  font-family: 'ZCOOLQingKeHuangYou-Regular', sans-serif;
+  background: rgb(37, 34, 53);
+  overflow:hidden;
+  margin:0;
+  padding:0;
+}
+.layer {
+  position:absolute;
+  height:500vh;
+  width:45vw;
+  top:50%;
+  left:50%;
+}
+.layer.top {
+  transform:translate(-50%,-50%) rotate(40deg);
+  background:#0e0f20;
+  background: linear-gradient(90deg, rgba(24,26,55,1) 0%, rgba(14,15,32,1) 100%);
+}
+div.title {
+  position:absolute;
+  top:0;
+  left:0;
+  margin:20px;
+  line-height:3em;
+}
+div.title h1 {
+  margin:0;
+  padding:10px;
+  font-size: 3.4em;
+  color:#fff;
+}
+div.title a.author {
+  margin:0;
+  padding:10px;
+  font-size: 2em;
+  text-decoration: none;
+  color:rgb(137, 120, 216);
+}
+div.button-container {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-45%,calc(-0.45 * 50vw));
+  height:2.5em;
+  width:50vw;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:row;
+}
+div.button {
+  position:relative;
+  flex-grow:1;
+  height:2em;
+  width:100px;
+  margin:30px;
+  padding:0;
+  border-radius:5px;
+  background:rgb(87, 95, 214);
+  cursor:pointer;
+  overflow:hidden;
+  
+  -webkit-box-shadow: -10px 10px 26px -11px rgba(0,0,0,0.75);
+  -moz-box-shadow: -10px 10px 26px -11px rgba(0,0,0,0.75);
+  box-shadow: -10px 10px 26px -11px rgba(0,0,0,0.75);
+}
+div.button span {
+  display:block;
+  position:absolute;
+  height:2em;
+  width:100px;
+  text-align:center;
+  line-height:2em;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:1.4em;
+  color:rgb(187, 180, 255);
+  z-index:100;
+}
+div.button::after {
+  content: "";
+  position:absolute;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+  transform:translateX(-100%);
+  background:rgb(49, 55, 131);
+  transition:.15s ease-in-out;
+}
+div.button:hover::after {
+  transform:translate(0);
+}
+#placeholder {
+  position:absolute;
+  top:50%;
+  left:50%;
+  height:calc(0.75 * 50vw);
+  width:50vw;
+  transform:translate(-45%,-50%);
+  margin:0;
+  border-radius:10px;
+  background:rgba(61, 69, 173, 0.8);
+  z-index:1000;
+  -webkit-box-shadow: -10px 10px 26px -11px rgba(0,0,0,0.75);
+  -moz-box-shadow: -10px 10px 26px -11px rgba(0,0,0,0.75);
+  box-shadow: -10px 10px 26px -11px rgba(0,0,0,0.75);
+}
+div.placeholder-inner {
+  position:relative;
+  height:calc(0.75 * 50vw);
+  width:50vw;
+  margin:0;
+  padding:0;
+}
+div.placeholder-inner span {
+  display:block;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  margin:0;
+  text-align:center;
+  font-size:2em;
+  color:rgb(187, 180, 255);
+}
+canvas {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-45%,-50%);
+  margin:0;
+  border-radius:10px;
+  cursor:pointer;
+  z-index:1;
+}
+
+#bombs-remaining, #timer, #face {
+  position: absolute;
+  top:50%;
+  left:25%;
+  height:50px;
+  width:100px;
+  line-height:50px;
+  text-align:center;
+  margin:0;
+  padding:0;
+  border-radius:10px;
+  background:rgba(61, 69, 173, 0.8);
+  font-family: "Share Tech Mono", monospace;
+  padding:15px;
+  font-size:2.5em;
+  -webkit-box-shadow: -10px 10px 26px -11px rgba(0,0,0,0.75);
+  -moz-box-shadow: -10px 10px 26px -11px rgba(0,0,0,0.75);
+  box-shadow: -10px 10px 26px -11px rgba(0,0,0,0.75);
+}
+
+#face {
+  transform:translate(-100%, -200%);
+}
+
+#bombs-remaining {
+  transform:translate(-100%, -50%);
+}
+
+#timer {
+  transform:translate(-100%, 100%);
+}
+
+div.face-inner {
+  height:50px;
+  width:100px;
+  position:relative;
+  margin:0;
+  padding:0;
+}
+
+#face-img {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  height:40px;
+  margin:0;
+}
+
+.unlit {
+  color:rgba(241, 233, 255, 0.5);
+}
+
+.lit {
+  color:rgb(241, 233, 255);
+}
+
+.credits {
+  position:absolute;
+  bottom:0;
+  right:0;
+  margin:5px;
+  font-size:1.2em;
+  color:rgb(92, 75, 189);
+}
+
+.credits a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1700px) {
+  div.button-container {
+    transform:translate(-45%,calc(-0.48 * 50vw));
+  }
+}
+@media screen and (max-width: 1200px) {
+  div.button-container {
+    transform:translate(-45%,calc(-0.52 * 50vw));
+  }
+}
