@@ -51,17 +51,21 @@ let segmentSize;
 let hold;
 let timer = 0;
 
+function revealBombs(){
+  for(let i = 0;i<grid.length;i++){
+    for(let j = 0;j<grid[i].length;j++){
+      if(grid[i][j].type === TYPES.BOMB){
+        grid[i][j].revealed = true;
+      }
+    }
+  }
+}
+
 function reveal(row, col){
   const type = grid[row][col].type;
   if(grid[row][col].flagged || grid[row][col].revealed) return;
   if(type === TYPES.BOMB){
-    for(let i = 0;i<grid.length;i++){
-      for(let j = 0;j<grid[i].length;j++){
-        if(grid[i][j].type === TYPES.BOMB){
-          grid[i][j].revealed = true;
-        }
-      }
-    }
+    revealBombs();
     lost = true;
     document.getElementById("face-img").src = "images/skull.png";
     return;
@@ -391,11 +395,12 @@ function rightclick(e){
     }
   }
   if(correctFlags === totalBombs){
+    revealBombs();
     won = true;
-    document.getElementById("face-img").src = "images/lol.png";
+    document.getElementById("face-img").src = "images/wai.png";
   }
   renderRemaining();
-  return false;
+  return;
 }
 
 function animate(){
