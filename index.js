@@ -30,6 +30,12 @@ const COLORS = {
     8: "#7f66ff"
 }
 
+const BOMBAMT = {
+  EASY: 15,
+  MEDIUM: 65,
+  HARD: 130
+}
+
 const margin = 2;
 
 let running = false;
@@ -124,22 +130,22 @@ function start(m) {
     case MODES.EASY:
       rows = 9;
       columns = 12;
-      totalBombs = 15;
-      flagsLeft = 15;
+      totalBombs = BOMBAMT.EASY;
+      flagsLeft = BOMBAMT.EASY;
       mode = MODES.EASY;
       break;
     case MODES.MEDIUM:
       rows = 18;
       columns = 24;
-      totalBombs = 50;
-      flagsLeft = 50;
+      totalBombs = BOMBAMT.MEDIUM;
+      flagsLeft = BOMBAMT.MEDIUM;
       mode = MODES.MEDIUM;
       break;
     case MODES.HARD:
       rows = 30;
       columns = 40; 
-      totalBombs = 110;
-      flagsLeft = 110;
+      totalBombs = BOMBAMT.HARD;
+      flagsLeft = BOMBAMT.HARD;
       mode = MODES.HARD;
       break; 
   }
