@@ -359,8 +359,8 @@ function clickCoordinate(e){
   const rect = canvas.getBoundingClientRect();
   const x = e.pageX - rect.left;
   const y = e.pageY - rect.top;
-  const squareCol = Math.floor((x - (x % (segmentSize + margin))) / (segmentSize + margin));
-  const squareRow = Math.floor((y - (y % (segmentSize + margin))) / (segmentSize + margin));
+  const squareCol = Math.round((x - (x % (segmentSize + margin))) / (segmentSize + margin));
+  const squareRow = Math.round((y - (y % (segmentSize + margin))) / (segmentSize + margin));
   return {row: squareRow, col: squareCol};
 }
 
