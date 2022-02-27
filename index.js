@@ -33,7 +33,7 @@ const COLORS = {
 const BOMBAMT = {
   EASY: 15,
   MEDIUM: 65,
-  HARD: 130
+  HARD: 240
 }
 
 const margin = 2;
